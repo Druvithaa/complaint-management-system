@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 **Assessment 1 (Total Marks **20**)**
 
@@ -92,3 +93,6 @@ We will send you an email to choose a Real-World project. If you face any diffic
 * Adherence to Git best practices and practical contributions.
 * Successful implementation, deploymentand CI/CD pipeline.
 * Problem-solving skills and the ability to go beyond basic requirements.
+=======
+# complaint-management-system
+>>>>>>> db44b11655264571b20bb3f481e667ff800f2f42
