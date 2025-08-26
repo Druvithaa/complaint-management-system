@@ -10,9 +10,9 @@ script: |
  if [ -d ".git" ]; then
  git pull
  else
-git clone --depth 1 git@github.com:OWNER/REPO.git .
-fi
-cd backend
-npm ci
-pm2 start server.js --name complaints-api || pm2 restart complaints-api
-pm2 save  # persist process list for reboot[5]
+ git clone --depth 1 git@github.com:OWNER/REPO.git .
+ fi
+ cd backend
+ npm ci
+ pm2 start server.js --name complaints-api || pm2 restart complaints-api
+ pm2 save  # persist process list for reboot[5]
