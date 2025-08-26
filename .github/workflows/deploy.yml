@@ -1,18 +1,18 @@
 name: Deploy over SSH
 uses: appleboy/ssh-action@v1.0.3  # runs commands on EC2 via SSH[3]
 with:
-host: ${{ secrets.EC2_HOST }}        # set in repo Settings → Secrets[4]
-username: ${{ secrets.EC2_USER }}     # usually ubuntu on Ubuntu AMIs[3]
-key: ${{ secrets.EC2_PRIVATE_KEY }}   # paste full private key text into secret[4]
-script: |
- set -e
- cd /var/www/complaints-app/complaint-management-system
+ host: ${{ secrets.EC2_HOST }}        # set in repo Settings → Secrets[4]
+ username: ${{ secrets.EC2_USER }}     # usually ubuntu on Ubuntu AMIs[3]
+ key: ${{ secrets.EC2_PRIVATE_KEY }}   # paste full private key text into secret[4]
+ script: |
+  set -e
+  cd /var/www/complaints-app/complaint-management-system
   if [ -d ".git" ]; then
   git pull
   else
   git clone --depth 1 git@github.com:Druvithaa/complaint-management-system.git .
- fi
- cd backend
- npm ci
- pm2 start server.js --name complaints-api || pm2 restart complaints-api
- pm2 save  # persist process list for reboot[5]
+  fi
+  cd backend
+  npm ci
+  pm2 start server.js --name complaints-api || pm2 restart complaints-api
+  pm2 save  # persist process list for reboot[5]
