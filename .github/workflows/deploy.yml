@@ -10,7 +10,7 @@ script: |
   if [ -d ".git" ]; then
   git pull
   else
-  git clone --depth 1 git@github.com:OWNER/REPO.git .
+  git clone --depth 1 git@github.com:Druvithaa/complaint-management-system.git .
  fi
  cd backend
  npm ci
