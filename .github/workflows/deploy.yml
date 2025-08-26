@@ -5,7 +5,7 @@ host: ${{ secrets.EC2_HOST }}        # set in repo Settings → Secrets[4]
 username: ${{ secrets.EC2_USER }}     # usually ubuntu on Ubuntu AMIs[3]
 key: ${{ secrets.EC2_PRIVATE_KEY }}   # paste full private key text into secret[4]
 script: |
-set -e
+ set -e
 cd /var/www/complaints-app/complaint-management-system
 if [ -d ".git" ]; then
 git pull
