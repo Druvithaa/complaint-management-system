@@ -7,9 +7,9 @@ key: ${{ secrets.EC2_PRIVATE_KEY }}   # paste full private key text into secret[
 script: |
  set -e
  cd /var/www/complaints-app/complaint-management-system
-if [ -d ".git" ]; then
-git pull
-else
+ if [ -d ".git" ]; then
+ git pull
+ else
 git clone --depth 1 git@github.com:OWNER/REPO.git .
 fi
 cd backend
